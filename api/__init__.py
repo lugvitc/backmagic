@@ -12,6 +12,4 @@ db = SQLAlchemy(api)
 from api.models import *
 db.create_all()
 
-@api.route('/')
-def index_route():
-    return ", ".join([c.name for c in Candidate.query.all()])
+from api.endpoints import *

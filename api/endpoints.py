@@ -1,5 +1,5 @@
 from flask import render_template, jsonify, Response, request
-
+from flask_cors import cross_origin
 from api import api
 
 @api.route('/')
@@ -13,5 +13,5 @@ def index_route():
 def recruitment_route():
     if request.method == 'GET':
         return 'POST HERE'
-    elif request.method == 'POST':
+    if request.method == 'POST':
         return Response(201)

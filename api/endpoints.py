@@ -14,4 +14,4 @@ def recruitment_route():
     if request.method == 'GET':
         return 'POST HERE'
     if request.method == 'POST':
-        return Response(201)
+        return Response(status=201)

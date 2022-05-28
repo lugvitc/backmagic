@@ -16,6 +16,9 @@ def recruitment_route():
         return 'POST HERE'
     if request.method == 'POST':
         dict = request.get_json(force=True)
-        db.session.add(Candidate(**dict))
-        db.session.commit()
-        return Response(status=201)
+        try:
+            db.session.add(Candidate(**dict))
+            db.session.commit()
+            return Response(status=201)
+        except:
+            return Response(status=202)

@@ -1,6 +1,7 @@
 from flask import render_template, Response, request
 from flask_cors import cross_origin
-from api import api
+from api import api, db
+from api.models import Candidate
 
 @api.route('/')
 def index_route():
@@ -14,4 +15,7 @@ def recruitment_route():
     if request.method == 'GET':
         return 'POST HERE'
     if request.method == 'POST':
+        dict = request.get_json(force=True)
+        db.session.add(Candidate(**dict))
+        db.session.commit()
         return Response(status=201)

@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
 api = Flask(__name__)
-cors ==CORS(api)
+CORS(api)
 
 api.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 api.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

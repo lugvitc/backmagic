@@ -1,4 +1,4 @@
-from flask import render_template, jsonify, Response, request
+from flask import render_template, Response, request
 from flask_cors import cross_origin
 from api import api
 

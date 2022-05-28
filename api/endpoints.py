@@ -13,7 +13,9 @@ def index_route():
 )
 def recruitment_route():
     if request.method == 'GET':
-        return 'POST HERE'
+        return render_template('view_db.html', **{
+            "candidates": Candidate.query.all()
+        })
     if request.method == 'POST':
         dict = request.get_json(force=True)
         try:

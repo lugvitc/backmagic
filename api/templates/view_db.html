@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Candidates{% endblock %}
+
+{% block style %}
+    table, th, td {
+        border: 1px solid black;
+    }
+{% endblock %}
+
+{% block main %}
+    <h1>Existing Candidates:</h1>
+    <table>
+        <tr>
+            <th> id </th>
+            <th> name </th>
+            <th> email </th>
+            <th> contact </th>
+            <th> prefDept </th>
+            <th> regno </th>
+            <th> whatLinux </th>
+            <th> whyLInux </th>
+            <th> expLinux </th>
+            <th> flagCommand </th>
+        </tr>
+        {% for candidate in candidates %}
+            <tr>
+                <td>{{candidate.id}}</td>
+                <td>{{candidate.name}}</td>
+                <td>{{candidate.email}}</td>
+                <td>{{candidate.contact}}</td>
+                <td>{{candidate.prefDept}}</td>
+                <td>{{candidate.regno}}</td>
+                <td>{{candidate.whatLinux}}</td>
+                <td>{{candidate.whyLinux}}</td>
+                <td>{{candidate.expLinux}}</td>
+                <td>{{candidate.flagCommad}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

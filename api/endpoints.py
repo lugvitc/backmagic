@@ -17,10 +17,10 @@ def recruitment_route():
             "candidates": Candidate.query.all()
         })
     if request.method == 'POST':
-        dict = request.get_json(force=True)
         try:
+            dict = request.get_json(force=True)
             db.session.add(Candidate(**dict))
             db.session.commit()
             return Response(status=201)
         except:
-            return Response(status=202)
+            return Response(status=400)

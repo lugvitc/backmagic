@@ -10,4 +10,4 @@ class Candidate(db.Model):
     whatLinux = db.Column(db.Text, nullable=False, unique=False)
     whyLinux = db.Column(db.Text, nullable=False, unique=False)
     expLinux = db.Column(db.Text, nullable=False, unique=False)
-    flagCommad = db.Column(db.String(128), nullable=False, unique=False)
+    flagCommand = db.Column(db.String(128), nullable=False, unique=False)

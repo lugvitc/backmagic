@@ -1,4 +1,5 @@
 popos_venv/
+venv
 .env
 __pycache__/
 eg.html
